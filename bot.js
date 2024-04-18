@@ -27,10 +27,16 @@ bot.on('message', async (msg) => {
         if (movie.Response === "True") {
             // Prepare movie details for output
             const details = [
+                `Poster: ${movie.Poster}`,
                 `Title: ${movie.Title}`,
                 `Release Date: ${movie.Released}`,
+                `RunTime: ${movie.Runtime}`,
+                `Genre: ${movie.Genre}`,
                 `Actors: ${movie.Actors}`,
-                `Ratings: ${movie.Ratings[0].Value}`
+                `Director: ${movie.Director}`,
+                `Ratings: ${movie.Ratings[0].Value}`,
+                `Rotten Tomatoes: ${movie.Ratings[1].Value}`,
+                `Awards Won: ${movie.Awards}`,
             ];
             // Send the movie details to the user
             bot.sendMessage(msg.chat.id, details.join('\n'));
