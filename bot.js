@@ -10,6 +10,7 @@ const bot = new TelegramBot(token, {
 
 bot.on('message', async (msg) => {
     const apiUrl = `http://www.omdbapi.com/?t=${encodeURIComponent(msg.text)}&apikey=b6ec3311`;
+    try {
         const response = await axios.get(apiUrl);
         const movie = response.data;
         if (movie.Response === "True") {
@@ -23,7 +24,10 @@ bot.on('message', async (msg) => {
         } else {
             bot.sendMessage(msg.chat.id, "Movie not found 🎬.");
         }
-    } 
-);
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        bot.sendMessage(msg.chat.id, "Error occurred while fetching movie data.");
+    }
+});
 
 console.log("started");
