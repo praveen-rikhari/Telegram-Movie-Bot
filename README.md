@@ -44,8 +44,4 @@ A step by step series of examples that tell you how to get a development environ
 - **Links and files**: You might need to create additional files like `CONTRIBUTING.md` and `LICENSE.md` as referenced in the README if they don't exist yet.
 - **Sections**: Feel free to add or remove sections based on what’s relevant to your project (like adding a "Known Issues" or "Future Features" section).
 
-This template will help make your GitHub repository look professional and provide all the necessary information to anyone who wants to use or contribute to your project.
-
-
-
    
